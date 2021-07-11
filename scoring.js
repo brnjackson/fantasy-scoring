@@ -63,8 +63,14 @@ function rbScoring(rbStats) {
 
 }
 
+function teScoring (teStats) {
+    let receptionScore = teStats.receiving.receptions
+    let receivingYardsScore = teStats.receiving.yards / 10
+    let receivingTouchdownScore = teStats.receiving.touchdowns * 6
+    let receivingFumbleScore = teStats.receiving.fumbles * -3
 
-
+    return receptionScore + receivingYardsScore + receivingTouchdownScore + receivingFumbleScore
+}
 
 function checkPosition(player) { 
   if (player.position === 'QB') {
@@ -77,6 +83,9 @@ function checkPosition(player) {
 
   else if (player.position === 'WR') {
     return wrScoring(player.stats)
+  }
+  else if (player.position === 'TE') {
+    return teScoring(player.stats)
   }
   else return 0
 }
