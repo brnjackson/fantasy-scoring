@@ -1,5 +1,24 @@
 # Fantasy Scoring
 
+
+# What the repo project does and the impact it has
+This repo uses intitial code as a starting point to create functions that will get each test to pass.
+
+# Technologies used in project
+JavaScript
+Mocha
+Chai
+Eslint
+VS Code
+GitHub
+
+# How to download and setup and run
+Use the provided GitHub link to clone the repo to your machine. Run 'npm test' to see the tests pass.
+
+# Main Authors of the repo
+Stack Education - provided initial files
+Brittney Jackson - wrote corresponding functions to create passing tests
+
 ## Instructions
 In the initial commit to this project, you have been provided with a basic project setup as well as a set of tests which currently fail. Your task is to create a `calculateScore` function which will properly calculate the fantasy score for all known positions, returning 0 when the position is not one of the ones laid out below.
 
