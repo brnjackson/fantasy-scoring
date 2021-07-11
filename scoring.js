@@ -40,6 +40,30 @@ function rbScoring(rbStats) {
   
   }
 
+  function wrScoring(wrStats) {
+    let rushingYardScore = wrStats.rushing.yards / 10
+    let rushingTouchdownScore = wrStats.rushing.touchdowns * 6
+    let rushingFumbleScore = wrStats.rushing.fumbles * -3
+    let receptionScore = wrStats.receiving.receptions
+    let receivingYardScore = wrStats.receiving.yards / 10
+    let receivingTouchdownScore = wrStats.receiving.touchdowns * 6
+    let receivingFumbleScore = wrStats.receiving.fumbles * -3
+    let kickReturnYardsScore = wrStats.return.kickreturn.yards / 15
+    let kickTouchdownScore = wrStats.return.kickreturn.touchdowns * 6
+    let kickFumbleScore = wrStats.return.kickreturn.fumbles * -3
+    let puntYardScore = wrStats.return.puntreturn.yards / 15
+    let puntTouchdownScore = wrStats.return.puntreturn.touchdowns * 6
+    let puntFumbleScore = wrStats.return.puntreturn.fumbles * -3
+  
+  
+    return rushingYardScore + rushingTouchdownScore + rushingFumbleScore
+    + receptionScore + receivingYardScore + receivingTouchdownScore
+    + receivingFumbleScore + kickReturnYardsScore + kickTouchdownScore +
+    kickFumbleScore + puntYardScore + puntTouchdownScore + puntFumbleScore
+
+}
+
+
 
 
 function checkPosition(player) { 
@@ -49,6 +73,10 @@ function checkPosition(player) {
 
   else if (player.position === 'RB') {
     return rbScoring(player.stats)
+  }
+
+  else if (player.position === 'WR') {
+    return wrScoring(player.stats)
   }
   else return 0
 }
